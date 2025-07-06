@@ -19,7 +19,7 @@ var operation = null;
 function calculate(operand1, operand2, operation) {
     var uri = location.origin + "/arithmetic";
 
-    // Map calculator button operations to API operation names
+    // TODO: Add operator
     switch (operation) {
         case '+':
             uri += "?operation=add";
@@ -32,9 +32,6 @@ function calculate(operand1, operand2, operation) {
             break;
         case '/':
             uri += "?operation=divide";
-            break;
-        case '^':
-            uri += "?operation=power";  // Power operation: operand1^operand2
             break;
         default:
             setError();

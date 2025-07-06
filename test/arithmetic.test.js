@@ -205,48 +205,4 @@ describe('Arithmetic', function () {
                 });
         });
     });
-
-    // Test cases for power/exponentiation operation
-    describe('Power', function () {
-        it('raises a positive integer to a positive power', function (done) {
-            request.get('/arithmetic?operation=power&operand1=2&operand2=3')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 8 });  // 2^3 = 8
-                    done();
-                });
-        });
-        it('raises a positive integer to the power of zero', function (done) {
-            request.get('/arithmetic?operation=power&operand1=5&operand2=0')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 1 });  // Any number^0 = 1
-                    done();
-                });
-        });
-        it('raises a positive integer to a negative power', function (done) {
-            request.get('/arithmetic?operation=power&operand1=2&operand2=-2')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 0.25 });  // 2^(-2) = 1/4 = 0.25
-                    done();
-                });
-        });
-        it('raises a negative integer to a positive power', function (done) {
-            request.get('/arithmetic?operation=power&operand1=-3&operand2=2')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 9 });  // (-3)^2 = 9
-                    done();
-                });
-        });
-        it('raises zero to a positive power', function (done) {
-            request.get('/arithmetic?operation=power&operand1=0&operand2=5')
-                .expect(200)
-                .end(function (err, res) {
-                    expect(res.body).to.eql({ result: 0 });  // 0^5 = 0
-                    done();
-                });
-        });
-    });
 });

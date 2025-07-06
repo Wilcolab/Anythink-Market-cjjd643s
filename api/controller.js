@@ -16,6 +16,7 @@ exports.calculate = function(req, res) {
   });
 
   // Define supported arithmetic operations
+  
   var operations = {
     'add':      function(a, b) { return Number(a) + Number(b) },
     'subtract': function(a, b) { return a - b },
